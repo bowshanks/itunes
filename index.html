@@ -15,8 +15,25 @@
           </div>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
-              <button class="btn btn-primary" ng-click="getSongData()"> Submit </button>
+              <div class="form-specifics">
+                <select class="form-control" ng-model="mediatype">
+                  <option value="all">all</option>
+                  <option value="music">music</option>
+                  <option value="podcast">podcast</option>
+                  <option value="audiobook">audiobook</option>
+                  <option value="musicVideo">musicVideo</option>
+                </select>
+                <select class="form-control" ng-model="limit">
+                  <option value=25>25</option>
+                  <option value=50>50</option>
+                  <option value=100>100</option>
+                  <option value=150>150</option>
+                  <option value=200>200</option>
+                </select>
+                <input type="checkbox" name="explicit" value="No" ng-model="explicit">No Explicit
+              </div>
+              <input type="text" class="form-control" ng-model="term" placeholder="search" >
+              <button class="btn btn-primary" ng-click="getSongData(term,mediatype,limit,explicit)"> Submit </button>
             </div>
           </form>
         </div>
